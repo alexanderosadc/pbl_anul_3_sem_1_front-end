@@ -1,0 +1,14 @@
+<div class="flex-container">
+    <mat-card *ngFor="let event of events;" class="card">
+        <mat-card-header>
+
+        <mat-card-title>{{event.meetingTitle}}</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+        <p>{{event.startTime}} </p>
+        <p>{{event.endTime}} </p>
+        <p>{{event.roomName}} </p>
+        </mat-card-content>
+    </mat-card>
+</div>

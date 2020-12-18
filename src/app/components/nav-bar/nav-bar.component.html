@@ -1,0 +1,17 @@
+<nav *ngIf="this.router.url!='/log-in'" mat-tab-nav-bar dynamicHeight animationDuration="0ms" [backgroundColor]="'primary'">
+    <a mat-tab-link
+       href="/home"> Home </a>
+
+    <a mat-tab-link
+        href="/map"> Map </a>
+
+    <a mat-tab-link
+        href="/create"> Create </a>
+
+  <a mat-tab-link
+     (click)="logOutFromGoogle()"> Log-Out </a>
+</nav>
+
+
+
+
