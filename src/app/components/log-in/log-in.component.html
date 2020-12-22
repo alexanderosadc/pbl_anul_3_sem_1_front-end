@@ -1,4 +1,26 @@
-<p>Please Log In to view your calendar</p>
+<div class="log-in-main">
+    <div class="part">
+        <div class="all-text">
+            <h1 class="big-text">Welcome back</h1>
+            <h1 class="big-text">Please login to your account</h1>
+        </div>
+        
+        <button class="button" (click)="signInWithGoogle()">
+            <img class="logo" src="assets/images/google-logo.png"  alt="">
+            Sign In with Google
+        </button>
+        <button class="button" (click)="signInWithGoogle()">
+            <img class="logo" src="assets/images/outlook-logo.png"  alt="">
+            Sign In with Outlook
+        </button>
+        
+    </div >
+    <div class="">
+        <img class="image" src="assets/images/brainstorming_session.png"  alt="brainstorming session">
+    </div>
 
-<button mat-raised-button color="primary" (click)="signInWithGoogle()">Log In</button> 
+</div>
+
+
+<!-- <button mat-raised-button color="primary" (click)="signInWithGoogle()">Log In</button>  -->
 <!-- <button mat-button color="primary" (click)="signOut()">Sign out</button> -->

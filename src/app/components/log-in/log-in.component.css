@@ -1,0 +1,46 @@
+.log-in-main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.image{
+    width: 40vw;
+}
+
+.big-text{
+    color: #969393;
+    margin: 0;
+}
+
+.all-text {
+    padding: 1rem 0;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: center;
+}
+
+.button {
+    margin: 0.5em 0 ;
+    border-radius: 1.3rem;
+    padding: 0.3rem 3rem 0.3rem 1rem;
+    border: none;
+    background-image: linear-gradient(to right, #BCD7FE , #DAEDFF);
+    color: #5F5D5D;
+
+    display: flex;
+    align-items:center;
+}
+
+.logo {
+    width: 1.4rem;
+    padding: 0.1rem 0.3rem 0.1rem 0;
+}
