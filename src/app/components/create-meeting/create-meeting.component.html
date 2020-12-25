@@ -3,51 +3,47 @@
 
   <mat-form-field >
     <mat-label>Meeting name</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi" formControlName="meetingName">
+    <input matInput placeholder="Ex. Pizza" value="Sushi" formControlName="meetingTitle">
   </mat-form-field>
 
 
   <div class="flex-ro">
     <mat-form-field  color="primary" appearance="fill" class="flex_item">
       <mat-label>Meeting Start Date</mat-label>
-      <input matInput [matDatepicker]="picker1" formControlName="meetingStartDate" />
+      <input matInput [matDatepicker]="picker1" formControlName="meetingDate" />
       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
       <mat-datepicker #picker1 color="accent"></mat-datepicker>
     </mat-form-field>
-    
-    <mat-form-field  color="primary" appearance="fill" class="flex_item">
-      <input  matInput type="time" placeholder="start time" formControlName="meetingStartTime">
-    </mat-form-field>
-  </div>
 
-  <div class="flex-ro">
     <mat-form-field  color="primary" appearance="fill" class="flex_item">
-      <mat-label>Meeting End Date</mat-label>
-      <input matInput [matDatepicker]="picker2" formControlName="meetingEndDate" />
-      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-      <mat-datepicker #picker2 color="accent"></mat-datepicker>
+      <input  matInput type="time" placeholder="start time" formControlName="startTime">
     </mat-form-field>
 
     <mat-form-field   color="primary" appearance="fill" class="flex_item">
-      <input  matInput type="time" placeholder="end time" formControlName="meetingEndTime">
+      <input  matInput type="time" placeholder="end time" formControlName="endTime">
     </mat-form-field >
+  </div>
+
+  <div class="flex-ro">
+
+
   </div>
 
   <mat-form-field >
     <mat-label>Invitees</mat-label>
-    <input type="email" matInput formControlName="meetingInvitees" placeholder="Ex. pat@example.com">
+    <input type="email" matInput formControlName="emails" placeholder="Ex. pat@example.com">
   </mat-form-field>
 
   <mat-form-field appearance="fill" class="flex_item">
     <mat-label>Meeting Room</mat-label>
-    <mat-select 
-      formControlName="meetingRoom" 
-      name="meetingRoom">
+    <mat-select
+      formControlName="roomName"
+      name="roomName">
       <mat-option *ngFor="let room of rooms" [value]="room.value">
         {{room.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-    
+
       <button mat-button color="primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
 </form>

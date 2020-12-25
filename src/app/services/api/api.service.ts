@@ -9,13 +9,13 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   getEvents(person: string): Observable<any> {
-    const link: string = `de la max}`;
+    const link = `de la max}`;
     const headers = {};
     return this.httpClient.get(link);
   }
 
   getMap(category: string): Observable<any> {
-    const link: string = `de la max}`;
+    const link = `de la max}`;
     const headers = {};
     return this.httpClient.get(link);
   }
@@ -26,9 +26,17 @@ export class ApiService {
     return this.httpClient.get(link);
   }
 
-  postevent(category: string): Observable<any> {
-    const link: string = `de la max}`;
-    const headers = {};
-    return this.httpClient.post(link, {});
+  postevent(body: object): Observable<any> {
+    const link = ``;
+    return this.httpClient.post(link, {
+
+    });
+  }
+
+  postMeeting(body: object): Observable<any>{
+    const link = 'https://localhost:44378/api/admin/insertMeeting';
+    return this.httpClient.post(link, {
+      body
+    });
   }
 }
