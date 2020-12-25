@@ -29,10 +29,18 @@
 
   </div>
 
-  <mat-form-field >
-    <mat-label>Invitees</mat-label>
-    <input type="email" matInput formControlName="emails" placeholder="Ex. pat@example.com">
-  </mat-form-field>
+  <div formArrayName="emails">
+    <button mat-button color="primary" (click)="addNewEmail()">Add Email</button>
+
+    <div *ngFor="let email of emails.controls; let emailId=index">
+      <mat-form-field >
+        <mat-label>Invitees {{emailId + 1}}</mat-label>
+        <input type="email" matInput [formControlName]="emailId" placeholder="Ex. pat@example.com">
+      </mat-form-field>
+    </div>
+
+  </div>
+
 
   <mat-form-field appearance="fill" class="flex_item">
     <mat-label>Meeting Room</mat-label>

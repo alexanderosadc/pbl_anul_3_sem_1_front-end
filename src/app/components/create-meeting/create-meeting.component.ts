@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { ApiService } from './../../services/api/api.service';
+import { BrowserModule } from '@angular/platform-browser';
 
 interface Room {
   value: string;
@@ -28,7 +29,10 @@ export class CreateMeetingComponent implements OnInit {
       startTime: ['', Validators.required],
       endTime: ['', Validators.required],
       roomName: ['', Validators.required],
-      emails: [, Validators.email]
+      //emails: ['', Validators.email]
+      emails: this.fb.array([
+        this.fb.control('')
+      ])
     });
   }
 
@@ -76,5 +80,15 @@ export class CreateMeetingComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('create called');
+  }
+
+  get emails(): FormArray
+  {
+    return this.profileForm.get('emails') as FormArray;
+  }
+
+  addNewEmail(): void
+  {
+    this.emails.push(this.fb.control(''));
   }
 }
