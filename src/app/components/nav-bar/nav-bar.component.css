@@ -1,1 +1,40 @@
 
+.bar{
+    display: flex;
+    align-items:center;
+    /* justify-content: space-between; */
+    margin: 0.5rem;
+}
+
+.nav-button{
+    text-decoration: none;
+    color: #5F5D5D;
+    /* font-weight: bold; */
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 1rem 2rem ;
+}
+
+.here{
+    font-weight: bold;
+    padding: 1.6rem 2rem 0.4rem 2rem;
+}
+
+a:active {
+    /* background-color: hotpink; */
+  } 
+
+.logo{
+    width: 3rem;
+}
+
+.circle
+  {
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-color: #fff; 
+    padding: 0.2rem;
+    
+  }

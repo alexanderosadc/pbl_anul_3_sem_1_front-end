@@ -1,15 +1,38 @@
-<nav *ngIf="this.router.url!='/log-in'" mat-tab-nav-bar dynamicHeight animationDuration="0ms" [backgroundColor]="'primary'">
-    <a mat-tab-link
-       href="/home"> Home </a>
+<nav *ngIf="this.router.url!='/log-in'" class="bar" >
+    <div class="circle">
+        <img class="logo" src="assets/images/Company-Logo.png"  alt="">    
+    </div>
+    
+    <a 
+        class="nav-button"
+        [class.here]="this.router.url == '/home'"
+        href="/home"> Home 
+        <div *ngIf="this.router.url == '/home'">
+            <img class="" src="assets/images/under-line.svg"  alt="">
+        </div>
+    </a>
 
-    <a mat-tab-link
-        href="/map"> Map </a>
+    <a 
+        class="nav-button"
+        [class.here]="this.router.url == '/map'"
+        href="/map"> 3D Map 
+        <div *ngIf="this.router.url == '/map'">
+            <img class="" src="assets/images/under-line.svg"  alt="">
+        </div>
+    </a>
 
-    <a mat-tab-link
-        href="/create"> Create </a>
+    <a 
+        class="nav-button"
+        [class.here]="this.router.url == '/create'"
+        href="/create"> Create meeting
+        <div *ngIf="this.router.url == '/create'">
+            <img class="" src="assets/images/under-line.svg"  alt="">
+        </div>
+    </a>
 
-  <a mat-tab-link
-     (click)="logOutFromGoogle()"> Log-Out </a>
+  <a 
+        class="nav-button"
+        (click)="logOutFromGoogle()"> Log Out </a>
 </nav>
 
 
