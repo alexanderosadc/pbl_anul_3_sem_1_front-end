@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { ApiService } from './../../services/api/api.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { DatePipe } from '@angular/common';
 
 interface Room {
   value: string;
@@ -22,7 +23,8 @@ export class CreateMeetingComponent implements OnInit {
   ];
 
   public profileForm: FormGroup;
-  constructor(private fb: FormBuilder, private service: ApiService) {
+
+  constructor(private fb: FormBuilder, private service: ApiService, public datepipe: DatePipe) {
     this.profileForm = this.fb.group({
       meetingTitle: ['', Validators.required],
       meetingDate: ['', Validators.required], // sa fie date timepicker
@@ -52,16 +54,17 @@ export class CreateMeetingComponent implements OnInit {
 
     if(parseInt(hoursAndMinutesArray[0]) < 10)
     {
-      time24 = '0' + hoursAndMinutesArray[0];
+      time24 = hoursAndMinutesArray[0];
     }
     else
     {
       time24 = hoursAndMinutesArray[0];
     }
 
-    time24 += hoursAndMinutesArray[1];
-
-    return date.toString().replace('00:00', time24.toString());
+    time24 += ':' + hoursAndMinutesArray[1];
+    const finalDate = this.datepipe.transform(date, 'yyyy-MM-dd');
+    console.log(finalDate);
+    return finalDate.toString().replace('00:00', time24.toString());
   }
 
   onSubmit(): void {
@@ -70,12 +73,12 @@ export class CreateMeetingComponent implements OnInit {
                             meetingTitle: formValues.meetingTitle.value,
                             startTime: this.mergeDataAndTime(formValues.meetingDate.value, formValues.startTime.value),
                             endTime: this.mergeDataAndTime(formValues.meetingDate.value, formValues.endTime.value),
-                            roomName: formValues.roomName,
-                            emails: formValues.emails
+                            roomName: formValues.roomName.value,
+                            emails: formValues.emails.value
                           };
 
-    console.log(meetingObject);
-    // this.service.postMeeting(meeting);
+
+    this.service.postMeeting(meetingObject);
   }
 
   ngOnInit(): void {
