@@ -1,13 +1,17 @@
+
+<div>
+    <h1 class="naming">Today's Meetings</h1>
+    <!-- <img class="" src="assets/images/under-line2.svg"  alt=""> -->
+</div>
+
 <div class="flex-container">
+    
     <mat-card *ngFor="let event of events;" class="card">
-        <mat-card-header>
 
-        <mat-card-title>{{event.meetingTitle}}</mat-card-title>
+        <mat-card-title class="card-title">{{event.meetingTitle}}</mat-card-title>
 
-        </mat-card-header>
         <mat-card-content>
-        <p>{{event.startTime}} </p>
-        <p>{{event.endTime}} </p>
+        <p>{{event.startTime}} - {{event.endTime}} </p>
         <p>{{event.roomName}} </p>
         </mat-card-content>
     </mat-card>
