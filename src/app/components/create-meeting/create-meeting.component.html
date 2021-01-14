@@ -1,57 +1,55 @@
-<!-- <p>create-meeting works!</p> -->
+
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="formular">
 
-  <mat-form-field >
-    <mat-label>Meeting name</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi" formControlName="meetingTitle">
-  </mat-form-field>
+  <div class="meeting-title">
+    <input  class="title-input" placeholder="Add title" formControlName="meetingTitle">
+  </div>
 
 
   <div class="flex-ro">
-    <mat-form-field  color="primary" appearance="fill" class="flex_item">
-      <mat-label>Meeting Start Date</mat-label>
-      <input matInput [matDatepicker]="picker1" formControlName="meetingDate" />
-      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-      <mat-datepicker #picker1 color="accent"></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field  color="primary" appearance="fill" class="flex_item">
-      <input  matInput type="time" placeholder="start time" formControlName="startTime">
-    </mat-form-field>
-
-    <mat-form-field   color="primary" appearance="fill" class="flex_item">
-      <input  matInput type="time" placeholder="end time" formControlName="endTime">
-    </mat-form-field >
-  </div>
-
-  <div class="flex-ro">
-
-
-  </div>
-
-  <div formArrayName="emails">
-    <button mat-button color="primary" (click)="addNewEmail()">Add Email</button>
-
-    <div *ngFor="let email of emails.controls; let emailId=index">
-      <mat-form-field >
-        <mat-label>Invitees {{emailId + 1}}</mat-label>
-        <input type="email" matInput [formControlName]="emailId" placeholder="Ex. pat@example.com">
-      </mat-form-field>
+    <div class="">
+      <label>Meeting Start Date</label>
+      <input class="input-field" type="date" formControlName="meetingDate" />
+      
     </div>
 
+    <div class="flex-ro">
+      <input class="input-field"  type="time" placeholder="start time" formControlName="startTime">
+    </div>
+
+    -
+
+    <div class="flex-ro">
+      <input class="input-field"  type="time" placeholder="end time" formControlName="endTime">
+    </div >
+  </div>
+
+  <div class="flex-ro" formArrayName="emails">
+    invitees
+    <div *ngFor="let email of emails.controls; let emailId=index">
+      <div >
+        
+        <input class="input-field" type="email"  [formControlName]="emailId" placeholder="Ex. pat@example.com">
+      </div>
+    </div>
+
+    <button  color="primary" (click)="addNewEmail()">Add Email</button>
+
   </div>
 
 
-  <mat-form-field appearance="fill" class="flex_item">
-    <mat-label>Meeting Room</mat-label>
-    <mat-select
+  <div class="flex-ro">
+    <label>Meeting Room</label>
+    <select
       formControlName="roomName"
+      class="input-field"
       name="roomName">
-      <mat-option *ngFor="let room of rooms" [value]="room.value">
+      <option value="" disabled selected>Select a room</option>
+      <option *ngFor="let room of rooms" [value]="room.value">
         {{room.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      </option>
+    </select>
+  </div>
 
-      <button mat-button color="primary" type="submit" [disabled]="!profileForm.valid">Submit</button>
+      <button   type="submit" [disabled]="!profileForm.valid">Submit</button>
 </form>
