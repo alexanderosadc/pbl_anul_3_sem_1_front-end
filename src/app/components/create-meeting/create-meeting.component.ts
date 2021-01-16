@@ -17,9 +17,14 @@ interface Room {
 })
 export class CreateMeetingComponent implements OnInit {
   rooms: Room[] = [
-    { value: 'Death Star', viewValue: 'Death Star' },
-    { value: 'Hall of Justice', viewValue: 'Hall of Justice' },
-    { value: 'Spider Skull Island', viewValue: 'Spider Skull Island' },
+    { value: 'Room 1', viewValue: 'Room 1' },
+    { value: 'Room 2', viewValue: 'Room 2' },
+    { value: 'Room 3', viewValue: 'Room 3' },
+    { value: 'Room 4', viewValue: 'Room 4' },
+    { value: 'Room 5', viewValue: 'Room 5' },
+    { value: 'Room 6', viewValue: 'Room 6' },
+    { value: 'Room 7', viewValue: 'Room 7' },
+    { value: 'Room 8', viewValue: 'Room 8' },
   ];
 
   public profileForm: FormGroup;
@@ -64,7 +69,7 @@ export class CreateMeetingComponent implements OnInit {
     time24 += ':' + hoursAndMinutesArray[1];
     const finalDate = this.datepipe.transform(date, 'yyyy-MM-dd');
     console.log(finalDate);
-    return finalDate.toString().replace('00:00', time24.toString());
+    return finalDate.toString() + ' ' + time24.toString();
   }
 
   onSubmit(): void {
