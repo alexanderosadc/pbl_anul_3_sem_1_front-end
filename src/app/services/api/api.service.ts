@@ -35,8 +35,19 @@ export class ApiService {
 
   postMeeting(body: object): Observable<any>{
     const link = 'https://localhost:44378/api/admin/insertMeeting';
-    return this.httpClient.post(link, {
-      body
-    });
+    console.log(body);
+    this.httpClient.post(link, body).subscribe(
+      (val) => {
+        console.log('POST call successful value returned in body',
+          val);
+      },
+      response => {
+        console.log('POST call in error', response);
+      },
+      () => {
+        console.log('The POST observable is now completed.');
+      }
+    );
+    return this.httpClient.post(link, body);
   }
 }

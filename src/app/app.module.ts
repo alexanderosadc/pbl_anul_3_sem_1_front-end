@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common'
 
 import {
   SocialLoginModule,
@@ -63,6 +64,7 @@ const gClientId =
     HttpClientModule
   ],
   providers: [
+    DatePipe,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
