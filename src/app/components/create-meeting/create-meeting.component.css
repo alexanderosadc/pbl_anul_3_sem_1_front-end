@@ -10,12 +10,22 @@
   padding: 2rem;
 }
 
+.flex-ro {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .title-input {
   height: 3rem;
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 3px solid #969393;
+  color: #5F5D5D;
+  font-size: 2rem;
+  margin: 1rem 0;
 }
 
 .meeting-title ::placeholder {
@@ -23,20 +33,54 @@
   font-size: 2rem;
 }
 
+.time-minus {
+  margin: 0;
+  width: 15px;
+  height: 2px;
+  background-color: #5F5D5D;
+}
+
 .input-field {
   background-color: #DAD6D6;
   border: 0;
   outline: 0;
-  height: 1.5rem;
   border-radius: 10px;
   font-size: 1rem;
+  padding: 0.5rem;
+  margin:  1rem;
+  color: #5F5D5D
 }
 
-.flex-ro {
+.hint-icon {
+  width: 1.7rem;
+ 
+}
+
+.date-input ::-webkit-calendar-picker-indicator { 
+  /* background-image: url("../../../assets/images/create-meeting/calendar.svg"); */
+ 
+}
+
+.save-flex {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: flex-end;
+}
+
+.submit-button {
+  width: 7rem;
+  height: 2.5rem;
+  border-radius: 10px;
   margin: 1rem;
+  font-size: 1.3rem;
+  color: #fff;
+
+}
+
+.ng-valid .submit-button {
+  background-color: #88B8FF;
+}
+
+.ng-invalid .submit-button {
+  background-color: #cadbf3;
 }
 
