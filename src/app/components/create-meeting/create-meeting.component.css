@@ -2,8 +2,8 @@
   display: flex;
   flex-flow: column wrap;
   max-width: 60%;
-  justify-content: space-evenly;
-  margin-left: 20%;
+  
+  margin: 1rem 3rem;
   background-color: rgb(250, 250, 250);
   height: 50%;
   border-radius: 20px;

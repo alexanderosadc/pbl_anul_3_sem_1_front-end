@@ -24,7 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
-import { DatePipe } from '@angular/common'
+import { DatePipe } from '@angular/common';
 
 import {
   SocialLoginModule,
@@ -32,9 +32,12 @@ import {
   GoogleLoginProvider,
 } from 'angularx-social-login';
 import { UnityComponent } from './unity/unity.component';
+import { UnderlinedNameComponent } from './components/underlined-name/underlined-name.component';
 
 const gClientId =
   '389972769588-r1q9mpjgas8m5cbrfu54e072evsivlie.apps.googleusercontent.com';
+
+// 762467622130-4pn1hpmrrr1l4cuvdsc5u98ubt5ntf4j
 
 @NgModule({
   declarations: [
@@ -45,6 +48,7 @@ const gClientId =
     CreateMeetingComponent,
     LogInComponent,
     UnityComponent,
+    UnderlinedNameComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,7 @@ const gClientId =
     MatSelectModule,
     MatCardModule,
     MatGridListModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     DatePipe,

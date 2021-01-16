@@ -1,0 +1,26 @@
+.flex-container-ro {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-container-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.naming {
+    text-decoration: none;
+    color: #5F5D5D;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 1rem 3rem 0 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    height: 4px;
+    
+}
