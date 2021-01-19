@@ -42,7 +42,6 @@ export class CreateMeetingComponent implements OnInit {
       ])
     });
   }
-
   mergeDataAndTime(date: string, time: string): string{
     const timeArray = time.toString().split(' ') ;
     const hoursAndMinutesArray = timeArray[0].split(':');
